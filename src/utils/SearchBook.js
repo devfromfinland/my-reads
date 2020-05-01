@@ -99,7 +99,7 @@ class SearchBook extends Component {
     console.log('Notification: ', message);
   }
 
-  showSearchResults = (value) => {
+  showSearchResults = async (value) => {
     // console.log(value);
     // TODO: Check if the search query is empty
     if (value === '') {
@@ -109,12 +109,11 @@ class SearchBook extends Component {
       }))
     } else {
       // TODO: Fetch data based on the search query
-      BooksAPI.search(value)
-        .then((books) => {
-          this.setState(() => ({
-            results: this.screenBooks(books)
-        }))
-      })
+      const books = await BooksAPI.search(value);
+      
+      this.setState(() => ({
+          results: this.screenBooks(books)
+      }))
     }
   }
 

@@ -11,14 +11,11 @@ class BooksApp extends React.Component {
     myShelves: ['currentlyReading', 'wantToRead', 'read'],
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     // TODO: Fetch current books from database and assign it to state
-    BooksAPI.getAll()
-      .then((books) => {
-        this.setState(() => ({
-          myBooks: books
-      }))
-    })
+    const books = await BooksAPI.getAll();
+
+    this.setState(() => ({myBooks: books}))
   }
 
   // TODO: update book.shelf with newShelf
