@@ -1,4 +1,5 @@
 # MyReads Project
+(this is a backup version, after trying to publish to gh-pages incorrectly)
 
 This is the Project #1 for Udacity's React Nanodegree Program. The codes forked from its starter repository at https://github.com/udacity/reactnd-project-myreads-starter. Backend server is provided by Udacity with the ['BooksAP.js'] to retrieve data on the backend.
 
